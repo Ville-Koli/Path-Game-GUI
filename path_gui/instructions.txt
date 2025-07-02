@@ -1,0 +1,77 @@
+/* Documentation
+ *
+ * -- INSTRUCTIONS --
+ * Gameboard generally:
+ *  The gameboard has two types of pieces: red, green
+ *
+ *  Black colored buttons on the gameboard are places
+ *  where you cannot move your pieces.
+ *
+ *  On the gameboard you can move your pieces by clicking
+ *  on a colored piece and then on a free slot (grey colored).
+ *  The piece will move there if the move is legal.
+ *
+ * Userinterace:
+ *  Userinterface contains: pause button, reset button,
+ *  autoplay button, labels (isMoveLegal, movesSpent,
+ *  haveYouWon, isPaused, points) and time display.
+ *
+ *  pause button:
+ *      pauses the board and the timer.
+ *
+ *  reset button:
+ *      resets the board and all of the attributes.
+ *
+ *  autoplay button:
+ *      starts autoplay and while
+ *      autoplay is on you cannot edit gameboard
+ *      if you unpause board during autoplay
+ *      autoplay will stop and let you continue
+ *      where autoplay stopped. When you click
+ *      autoplay the board will reset (this includes
+ *      timer, internal timer, all variables)
+ *
+ *  isMoveLegal:
+ *      tells user if the move they made is legal.
+ *
+ *  movesSpent:
+ *      tells user how many moves they have made.
+ *
+ *  haveYouWon:
+ *      tells user whether they have won and
+ *      if user has won the board and timer will be frozen
+ *
+ *  isPaused:
+ *      tells user whether board is paused or not.
+ *
+ *  points:
+ *      tells user how many points they have.
+ *
+ *      note about point calculation:
+ *          max points : 31 on move 31.
+ *          min points : 0 on move 62 or greater (done moves < 62).
+ *
+ *          points are calculated with mathematical equation of floor(31 * sin( ( π * x ) / 62 ))
+ *
+ *          users points cannot go below zero.
+ *
+ * Extra features:
+ * 	3. automatic play
+ *	4. Point calculation
+ *	8. Pause button
+ *
+ *
+ * -- Programs infrastructure and planning decisions description --
+ *  Program was designed on gameboard.hh and gameboard.cpp.
+ *
+ *  Autoplay was designed on the assumption that gameboard would
+ *  not change in size (no more and no less buttons). Autoplay is
+ *  should be flexible because it only relies on completed_game_
+ *  to have all the necessary moves to play the game from start to
+ *  end. Therefore if the board changes in future then autoplay
+ *  can be relatively easily changed to fit our new needs.
+ *
+ * Program MainWindow was split into multiple methods to make program easier
+ * to read and easier to optimise. Also methods were commented.
+ * 
+ */
